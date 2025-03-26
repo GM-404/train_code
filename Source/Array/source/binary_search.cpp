@@ -110,6 +110,30 @@ int Solution_binary::searchInsert(std::vector<int> &nums, int target) // 暴力�
     }
     return -1;
 }
-int Solution_binary::searchInsert2(std::vector<int> &nums, int target) // 二分法
+int Solution_binary::searchInsert2(std::vector<int> &nums, int target) // 二分插入
 {
+    int left = 0;
+    int right = nums.size() - 1;
+    while (left <= right)
+    {
+        int middle = left + ((right - left) >> 1);
+        if (nums[middle] < target)
+        {
+            left = middle + 1;
+        }
+        else if (nums[middle] == target)
+        {
+            nums.insert(nums.begin() + middle, target);
+            std::cout << "after insert" << std::endl; // 打印出来插入后的数组
+            for (int i = 0; i < nums.size(); i++)
+            {
+                std::cout << nums[i] << std::endl;
+            }
+        }
+        else if (nums[middle] > target)
+        {
+            right = middle - 1;
+        }
+    }
+    return -1;
 }

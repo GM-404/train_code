@@ -10,6 +10,8 @@ class Solution_binary
 public:
     int close_search(std::vector<int> &nums, int target);
     int ajar_search(std::vector<int> &nums, int target);
+    int searchInsert(std::vector<int> &nums, int target);
+    int searchInsert2(std::vector<int> &nums, int target);
 };
 #endif
 
