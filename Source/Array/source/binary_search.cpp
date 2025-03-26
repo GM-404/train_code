@@ -166,6 +166,5 @@ int Solution_binary::searchInsert2(std::vector<int> &nums, int target) // 二分
             return right + 1;
         }
     }
-
     return -1;
 }
