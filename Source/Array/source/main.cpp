@@ -23,7 +23,7 @@ int main()
     // std::cout << loc2 << std::endl;
     // int loc3 = solution_binary.searchInsert(nums, 1);
     // std::cout << "insert loc:" << loc3 << std::endl;
-    int loc4 = solution_binary.searchInsert(nums, 5);
+    int loc4 = solution_binary.searchInsert2(nums, 1);
     std::cout << "insert loc:" << loc4 << std::endl;
     return 0;
 }

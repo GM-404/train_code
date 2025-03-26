@@ -114,6 +114,26 @@ int Solution_binary::searchInsert2(std::vector<int> &nums, int target) // 二分
 {
     int left = 0;
     int right = nums.size() - 1;
+    if (nums[0] > target) // 在头部
+    {
+        nums.insert(nums.begin(), target);
+        std::cout << "after insert" << std::endl; // 打印出来插入后的数组
+        for (int i = 0; i < nums.size(); i++)
+        {
+            std::cout << nums[i] << std::endl;
+        }
+        return 0;
+    }
+    if (nums[nums.size() - 1] < target) // 在尾部
+    {
+        nums.insert(nums.end(), target);
+        std::cout << "after insert" << std::endl; // 打印出来插入后的数组
+        for (int i = 0; i < nums.size(); i++)
+        {
+            std::cout << nums[i] << std::endl;
+        }
+        return nums.size() - 1;
+    }
     while (left <= right)
     {
         int middle = left + ((right - left) >> 1);
@@ -129,11 +149,23 @@ int Solution_binary::searchInsert2(std::vector<int> &nums, int target) // 二分
             {
                 std::cout << nums[i] << std::endl;
             }
+            return middle;
         }
         else if (nums[middle] > target)
         {
             right = middle - 1;
         }
+        if (left >= right) // 没找到导致左右相反，证明已经寻找一遍
+        {
+            nums.insert(nums.begin() + middle, target);
+            std::cout << "after insert" << std::endl; // 打印出来插入后的数组
+            for (int i = 0; i < nums.size(); i++)
+            {
+                std::cout << nums[i] << std::endl;
+            }
+            return right + 1;
+        }
     }
+
     return -1;
 }
