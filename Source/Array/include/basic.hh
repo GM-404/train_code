@@ -17,3 +17,8 @@ void basic();
 // 如果使用C++的话，要注意vector 和 array的区别，vector的底层实现是array，严格来讲vector是容器，不是数组。
 // 数组的元素是不能删的，只能覆盖。
 #endif
+
+/*
+这里是basic
+basic();
+*/
