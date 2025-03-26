@@ -168,3 +168,46 @@ int Solution_binary::searchInsert2(std::vector<int> &nums, int target) // 二分
     }
     return -1;
 }
+// int Solution_binary::find_border(std::vector<int> &nums, int target) // 找到左右边界
+// {
+// }
+int Solution_binary::find_left_borader(std::vector<int> &nums, int target) // 找到左边界
+{
+    int left = 0;
+    int right = nums.size() - 1;
+    int leftBorder = -1;  // 记录一下leftBorder没有被赋值的情况
+    while (left <= right) // 当left==right，区间[left, right]依然有效，所以用 <=
+    {
+        int mid = left + (right - left) / 2; // 防止溢出 等同于(left + right)/2
+        if (nums[mid] >= target)
+        {
+            right = mid - 1;
+            leftBorder = mid;
+        }
+        else
+        {
+            left = mid + 1;
+        }
+    }
+    return leftBorder;
+}
+int Solution_binary::find_right_borader(std::vector<int> &nums, int target) // 找到右边界
+{
+    int left = 0;
+    int right = nums.size() - 1;
+    int right_boarder = -1;
+    while (left <= right) // 当left==right，区间[left, right]依然有效，所以用 <=
+    {
+        int mid = left + (right - left) / 2; // 防止溢出 等同于(left + right)/2
+        if (nums[mid] > target)
+        {
+            right = mid - 1;
+        }
+        else
+        {
+            right_boarder = left;
+            left = mid + 1;
+        }
+    }
+    return right_boarder;
+}
