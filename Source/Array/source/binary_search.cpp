@@ -168,9 +168,20 @@ int Solution_binary::searchInsert2(std::vector<int> &nums, int target) // 二分
     }
     return -1;
 }
-// int Solution_binary::find_border(std::vector<int> &nums, int target) // 找到左右边界
-// {
-// }
+void Solution_binary::find_border(std::vector<int> &nums, int target) // 找到左右边界
+{
+    int leftborder = find_left_borader(nums, target);   // 找到左边界
+    int rightborder = find_right_borader(nums, target); // 找到右边界
+    if (leftborder == -1 && rightborder == -1)
+    {
+        std::cout << "not find" << std::endl;
+    }
+    else
+    {
+        std::cout << "leftborder:" << leftborder << std::endl;
+        std::cout << "rightborder:" << rightborder << std::endl;
+    }
+}
 int Solution_binary::find_left_borader(std::vector<int> &nums, int target) // 找到左边界
 {
     int left = 0;

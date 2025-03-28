@@ -29,5 +29,7 @@ int main()
     std::cout << "left loc:" << loc5 << std::endl;
     int loc6 = solution_binary.find_right_borader(nums, 2);
     std::cout << "right loc:" << loc6 << std::endl;
+    solution_binary.find_border(nums, 2);
+
     return 0;
 }

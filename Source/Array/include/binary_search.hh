@@ -12,7 +12,7 @@ public:
     int ajar_search(std::vector<int> &nums, int target);   // 二分查找开区间
     int searchInsert(std::vector<int> &nums, int target);  // 暴力插入
     int searchInsert2(std::vector<int> &nums, int target); // 二分插入
-    int find_border(std::vector<int> &nums, int target);   // 找到左右边界
+    void find_border(std::vector<int> &nums, int target);  // 找到左右边界
     int find_left_borader(std::vector<int> &nums, int target);
     int find_right_borader(std::vector<int> &nums, int target);
 };
